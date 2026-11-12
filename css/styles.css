@@ -1,0 +1,108 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --primary-color: #1e2a44;
+    --secondary-color: #7b8fb8;
+    --accent-color: #d4af37;
+    --tertiary-color: #4c326e;
+    --background-color: #f6f3ea;
+}
+
+/* primary-color and background-color have a good contrast ratio of 12.87:1*/
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.heroimage img {
+    max-width: 100%;
+}
+
+article img {
+    max-width: clamp(3rem, 100%, 450px);
+    height: auto;
+}
+
+@media (min-width: 767px) {
+    main {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "hero hero"
+            "aside featured"
+            "horoscope horoscope";
+    }
+    .hero {grid-area: hero;}
+    .aside {grid-area: aside;}
+    .featured {grid-area: featured;}
+    .horoscope {grid-area: horoscope;}
+}
+
+p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif,; line-height: 1,5;}
+h1 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2;}
+h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; font-size: 1.8rem;}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+a.logo{
+    font-family: Aboreto, system-ui, sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: DM Sans, system-ui, sans-serif;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+article img {
+    border-radius: 12px;
+}
+
+footer {
+    background-color: var(--tertiary-color);
+}
+
+footer {
+    h3 {
+        font-family: Aboreto;
+        color: var(--background-color);
+        font-size: 1.3rem;
+    }
+    p {
+        color: var(--background-color);
+    }
+    margin-bottom: 0;
+    padding: 0.8rem;
+}
+
+.footertext {
+   
+}
