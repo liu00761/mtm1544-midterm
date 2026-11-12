@@ -13,6 +13,10 @@
 body {
     margin: 0;
     background-color: var(--background-color);
+    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
 }
 
 .heroimage img {
@@ -24,24 +28,9 @@ article img {
     height: auto;
 }
 
-@media (min-width: 767px) {
-    .indexmain {
-        display:grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "hero hero"
-            "aside featured"
-            "horoscope horoscope";
-    }
-    .hero {grid-area: hero;}
-    .aside {grid-area: aside;}
-    .featured {grid-area: featured;}
-    .horoscope {grid-area: horoscope;}
-}
-
-p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif; line-height: 1,5;}
-h1 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2;}
-h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; font-size: 1.8rem;}
+p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif; line-height: 1,5; max-width: 65ch; margin-left: 2rem;}
+h1 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; margin-left: 2rem;}
+h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; font-size: 1.8rem; max-width: 65ch; margin-left: 2rem;}
 
 .skip-link {
   position: absolute;
@@ -53,12 +42,20 @@ h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; lin
   z-index: 999;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    flex-wrap: wrap;
+}
+
 a.logo{
     font-family: Aboreto, system-ui, sans-serif;
     font-size: 2rem;
     text-decoration: none;
     color: var(--primary-color);
     text-align: center;
+    margin-top: 1rem;
 }
 
 .navbar {
@@ -80,6 +77,16 @@ a.logo{
     padding: 1rem;
 }
 
+.hero {
+    margin: 0;
+}
+
+.heroimage {
+    margin: 0;
+}
+
+/* why is there sitll a space between the hero image and the banner?????? */
+
 .asidetext {
     color: var(--primary-color);
     font-family: EB Garamond, system-ui, sans-serif; 
@@ -89,16 +96,12 @@ a.logo{
     text-align: center;
 }
 
-/* <div class="herotext">
-                <h1>Flowers for Fall</h1>
-                <p>A little magic in every bloom</p>
-                <button><a href="featured.html">Shop Now</a></button>
-            </div> */
 
 .herotext {
     background-color: var(--tertiary-color);
-    margin-top: 0;
-    padding: 1.5rem;
+    margin: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     h1 {color:var(--background-color)}
     p {color: var(--background-color)}
 }
@@ -107,7 +110,7 @@ a.logo{
     background-color: var(--accent-color);
     border: none;
     padding: 0.5rem;
-    margin: 0.3rem;
+    margin-left: 2rem;
     border-radius: 6px;
     a {
         text-decoration: none; 
@@ -119,13 +122,21 @@ a.logo{
 .carousel {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     gap: 1.5rem;
     padding: 1.5rem;
+    justify-content: center;
 }
 
 article img {
     border-radius: 12px;
+    justify-content: center;
+}
+
+.card{
+    justify-content: center;
+}
+.card p {
+    line-height: 0.5rem;
 }
 
 footer {
@@ -137,6 +148,7 @@ footer {
         font-family: Aboreto;
         color: var(--background-color);
         font-size: 1.3rem;
+        margin-left: 2rem;
     }
     p {
         color: var(--background-color);
@@ -145,6 +157,25 @@ footer {
     padding: 0.8rem;
 }
 
-.footertext {
-   
+/* this part worked before, but im not sure why it doesnt work anymore */
+@media (min-width: 767px) {
+    .indexmain {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "hero hero"
+            "aside featured"
+            "horoscope horoscope";
+    }
+    .hero {grid-area: hero;}
+    .aside {grid-area: aside;}
+    .featured {grid-area: featured;}
+    .horoscope {grid-area: horoscope;}
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: 2rem;
 }
