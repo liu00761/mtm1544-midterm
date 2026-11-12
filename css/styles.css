@@ -25,7 +25,7 @@ article img {
 }
 
 @media (min-width: 767px) {
-    main {
+    .indexmain {
         display:grid;
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -39,7 +39,7 @@ article img {
     .horoscope {grid-area: horoscope;}
 }
 
-p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif,; line-height: 1,5;}
+p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif; line-height: 1,5;}
 h1 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2;}
 h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; font-size: 1.8rem;}
 
@@ -57,6 +57,8 @@ a.logo{
     font-family: Aboreto, system-ui, sans-serif;
     font-size: 2rem;
     text-decoration: none;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 .navbar {
@@ -72,6 +74,46 @@ a.logo{
     color: var(--primary-color);
     text-decoration: none;
     font-family: DM Sans, system-ui, sans-serif;
+}
+
+.aside {
+    padding: 1rem;
+}
+
+.asidetext {
+    color: var(--primary-color);
+    font-family: EB Garamond, system-ui, sans-serif; 
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* <div class="herotext">
+                <h1>Flowers for Fall</h1>
+                <p>A little magic in every bloom</p>
+                <button><a href="featured.html">Shop Now</a></button>
+            </div> */
+
+.herotext {
+    background-color: var(--tertiary-color);
+    margin-top: 0;
+    padding: 1.5rem;
+    h1 {color:var(--background-color)}
+    p {color: var(--background-color)}
+}
+
+.herotext button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.5rem;
+    margin: 0.3rem;
+    border-radius: 6px;
+    a {
+        text-decoration: none; 
+        font-family: DM Sans, system-ui, sans-serif;
+        font-size: 1.2rem;
+    }
 }
 
 .carousel {
